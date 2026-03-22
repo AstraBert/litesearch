@@ -1,0 +1,17 @@
+[package]
+name = "qdrant-edge-utils"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.102"
+napi = "3.8.3"
+napi-derive = "3.5.2"
+qdrant-edge = "0.0.0"
+serde_json = "1.0.149"
+
+[lib]
+crate-type = ["cdylib"]
+
+[build-dependencies]
+napi-build = "1"
