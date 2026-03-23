@@ -1,0 +1,13 @@
+{
+  "name": "qdrant-edge-utils",
+  "package": "qdrant-edge-utils",
+  "devDependencies": {
+    "@napi-rs/cli": "^1.0.0"
+  },
+  "scripts": {
+    "build": "napi build --release",
+    "build:debug": "napi build"
+  },
+  "main": "index.js",
+  "types": "index.d.ts"
+}

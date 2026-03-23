@@ -1,16 +1,35 @@
 {
   "name": "litesearch",
-  "module": "index.ts",
+  "workspaces": [
+    "packages/*"
+  ],
+  "module": "src/index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "format": "prettier . --check",
+    "format:fix": "prettier . --write",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "ingest": "bun run src/index.ts ingest",
+    "retrieve": "bun run src/index.ts retrieve"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@eslint/js": "^10.0.1",
+    "@types/bun": "latest",
+    "eslint": "^10.1.0",
+    "globals": "^17.4.0",
+    "prettier": "^3.8.1",
+    "typescript-eslint": "^8.57.1"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
+    "@chonkiejs/core": "^0.0.8",
     "@huggingface/transformers": "^3.8.1",
-    "@llamaindex/liteparse": "^1.0.1"
+    "@llamaindex/liteparse": "^1.0.1",
+    "commander": "^14.0.3",
+    "qdrant-edge-utils": "workspace:*"
   }
 }

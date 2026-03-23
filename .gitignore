@@ -35,3 +35,7 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # rust
 target/
+
+# data and embeddings
+.litesearch.qdrant/
+data/
