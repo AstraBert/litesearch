@@ -78,7 +78,7 @@ bun run tui
 
 You can then follow the prompts from terminal, as in this image:
 
-![TUI example](tui.png)
+![TUI example](./assets/tui.png)
 
 ## Project structure
 
