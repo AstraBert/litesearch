@@ -1,5 +1,7 @@
 import { Command } from "commander";
 import { ingest, retrieve } from "./pipelines";
+import { bold, gray, red, yellow } from "@visulima/colorize";
+import { runTui } from "./tui";
 
 const program = new Command();
 
@@ -45,15 +47,28 @@ program
         opts.scoreThreshold,
       );
       if (results.length === 0) {
-        console.log("No results found.");
+        console.log(bold(red("No results found.")));
         return;
       }
       for (const r of results) {
-        console.log(`[${r.score.toFixed(4)}] ${r.documentPath}`);
+        console.log(
+          `[${bold(r.score.toFixed(4))}] ${bold(yellow(r.documentPath))}`,
+        );
         console.log(r.content);
+        console.log();
+        console.log(bold(gray("------------------------")));
         console.log();
       }
     },
   );
+
+program
+  .command("tui")
+  .description(
+    "Launch a TUI to interactively access the ingestion and retrieval functionalities.",
+  )
+  .action(async () => {
+    await runTui();
+  });
 
 program.parseAsync();

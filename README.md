@@ -68,6 +68,18 @@ Revenue for Q3 reached $4.2M, up 18% from the prior quarter...
 The board approved a revised forecast of $17M for the full fiscal year...
 ```
 
+## TUI
+
+You can also use the terminal interface to access the ingestion and retrieval functionalities interactively:
+
+```bash
+bun run tui
+```
+
+You can then follow the prompts from terminal, as in this image:
+
+![TUI example](tui.png)
+
 ## Project structure
 
 ```
@@ -78,6 +90,7 @@ src/
   chunk.ts       # text chunking via Chonkie
   embed.ts       # local embedding via transformers.js
   store.ts       # vector upsert and search
+  tui.ts         # utilities to run the terminal interface
 
 packages/
   qdrant-edge-utils/

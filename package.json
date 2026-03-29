@@ -12,7 +12,8 @@
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
     "ingest": "bun run src/index.ts ingest",
-    "retrieve": "bun run src/index.ts retrieve"
+    "retrieve": "bun run src/index.ts retrieve",
+    "tui": "bun run src/index.ts tui"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -27,8 +28,10 @@
   },
   "dependencies": {
     "@chonkiejs/core": "^0.0.8",
+    "@clack/prompts": "^1.1.0",
     "@huggingface/transformers": "^3.8.1",
     "@llamaindex/liteparse": "^1.0.1",
+    "@visulima/colorize": "^1.4.29",
     "commander": "^14.0.3",
     "qdrant-edge-utils": "workspace:*"
   }
